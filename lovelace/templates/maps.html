@@ -1,34 +1,84 @@
-{% extends 'layout.html' %} 
 {% load staticfiles %}
 {% csrf_token %}
-
-{% block content %}
-<div id="guia">
-   <h1> MAPA </h1>
-</div>
-    <div id="formParceiras">
-        <div class="mapa">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.319855258834!2d-46.66115638538406!3d-23.55695316731379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59ccf12e5007%3A0x394b02124900517c!2sR.+Augusta%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1552948953135" width="700" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-        <div class="form">
-                <form method="POST">
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+    <title>Lovelace.</title>
+</head>
+<body>
+        <nav>
+            <div id="ancoras-nav">
+                <a href='/home'>Home</a>
+                <a href='/usuario'>Perfil</a> 
+                <a href="">Histórico</a>
+                <a href='/cadastroparceiras'>Seja Parceira</a>
+                <a href="">Ajuda</a>
+                <a href='/index'>Sair</a>
+            </div>
+            <div id="search">
+                <input type="text" name="busca">
+                <input type="image" src="{% static 'icones/musica-searcher.png' %}" alt="Submit" />
+            </div>
+        </nav>
+    <div id="guia">
+    <h1> MAPA </h1>
+    </div>
+        <div id="formParceiras">
+            <div id="topo">
+                <div class="mapa">
+                        <div id="search-mapa">
+                                <input type="text" name="busca" placeholder="   Para onde quer ir hoje?">
+                                <input type="image" src="{% static 'icones/musica-searcher.png' %}" alt="Submit" />
+                            </div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.319855258834!2d-46.66115638538406!3d-23.55695316731379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59ccf12e5007%3A0x394b02124900517c!2sR.+Augusta%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1552948953135" width="700" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="votacoes">
+                    <h1>Rua Augusta, São Paulo-SP</h1>
+                    <div class id="porcentagens">
+                    <p><div class="mudar-cor">  80%</div> das usuárias acham essa rua iluminada.</p>
+                    <p><div class="mudar-cor">  45%</div> das usuárias se sentem seguras nessa rua.</p>
+                    <p><div class="mudar-cor">  100%</div> das usuárias acham essa rua movimentada.</p>
+                    <p><div class="mudar-cor">  60%</div> das usuárias acham essa rua bem vigiada.</p>
+                    </div>
+                </div>
+            </div>
+                <div class="form-mapa">
+                    <h1>Avalie essa rua:</h1>
+                    <form method="POST">
                         {% csrf_token %}
-                        <h3>Este lugar é iluminado?</h3>
-                        <input type="radio" name="iluminado" value="Sim" id="iluminados"> Sim
-                        <input type="radio" name="iluminado" value="Nao" id="iluminadon"> Nao
-                        <h3>Este lugar é movimentado?</h3>
-                        <input type="radio" name="movimentado" value="Sim" id="movimentados"> Sim
-                        <input type="radio" name="movimentado" value="Nao" id="movimentadon"> Nao
-                        <h3>Este lugar tem vigilancia?</h3>
-                        <input type="radio" name="vigilancia" value="Sim" id="vigilancias"> Sim
-                        <input type="radio" name="vigilancia" value="Nao" id="vigilancian"> Nao
-                        <h3>Voce se sente segura aqui?</h3>
-                        <input type="radio" name="seguranca" value="Sim" id="segurancas"> Sim
-                        <input type="radio" name="seguranca" value="Nao" id="segurancan"> Nao
-        
+                        <div class="coluna01">
+                            <div class="h3input">
+                                <h3>Esse lugar é bem iluminado?</h3>
+                                <input type="radio" name="iluminado" value="Sim" id="iluminados"> Sim
+                                <input type="radio" name="iluminado" value="Nao" id="iluminadon"> Não
+                            </div>
+                            <div class="h3input">
+                                <h3>Esse lugar é movimentado?</h3>
+                                <input type="radio" name="movimentado" value="Sim" id="movimentados"> Sim
+                                <input type="radio" name="movimentado" value="Nao" id="movimentadon"> Não
+                            </div>
+                        </div>
+                        <div class="coluna01">
+                            <div class="h3input">
+                                <h3>Esse lugar tem vigilancia?</h3>
+                                <input type="radio" name="vigilancia" value="Sim" id="vigilancias"> Sim
+                                <input type="radio" name="vigilancia" value="Nao" id="vigilancian"> Não
+                            </div>
+                             <div class="h3input">
+                                <h3>Você se sente segura aqui?</h3>
+                                <input type="radio" name="seguranca" value="Sim" id="segurancas"> Sim
+                                <input type="radio" name="seguranca" value="Nao" id="segurancan"> Não
+                             </div>
+                        </div>
                         <button type="submit"> Enviar </button>
                     </form>
-        </div>
-    </div>    
-          
-{% endblock %}
+                </div>        
+            </div>
+        </div>    
+</body>
+</html>

@@ -599,9 +599,139 @@ aside{
     display:flex;
     flex-direction: column;
     margin-left: 10px;
-    
-    
 }
 aside a{
     margin:5px;
+}
+/* MAPA */
+#formParceiras{
+    background-color: rgb(243, 231, 234);
+    margin:30px;
+    border-radius:12px;
+    width: 90%;
+    margin-left: 60px;
+    padding:30px;
+}
+#search-mapa{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:20px
+}
+
+#search-mapa input{
+    font-size:16pt;
+}
+#search-mapa input[type="text"]{
+    height: 45px;
+    width:100%;
+    border:solid;
+    border-width: thin;
+    border-radius: 12px;
+    border-color:#FF99B5;
+    font-size:12pt;
+}
+#search-mapa input[type="image"]{
+    height:30px;
+    width: 30px;
+    background-color: white;
+    padding:7px;
+    border-radius:50%;
+    margin-left: 10px;
+}
+
+#topo{
+    display:flex;
+}
+.votacoes{
+    font-family: "poiret one";
+    font-weight: bold;
+    font-size:20pt;
+    margin-left:80px;
+    border:solid;
+    border-width: thin;
+    border-radius: 12px;
+    border-color: rgb(240, 173, 190);
+    margin-top:90px;
+    padding:10px;
+    background-color: rgb(250, 248, 248);
+    height: 470px;
+}
+.votacoes h1{
+    background-color: #FF0047;
+    padding:10px;
+    font-size: 40px;
+    border-radius:3px;
+}
+.votacoes p{
+    margin-left:30px;
+}
+.porcentagens{
+    display:flex;
+}
+.mudar-cor{
+    color:#FF0047;
+    font-size:30px;
+}
+.form-mapa{
+    margin-top:80px;
+    font-family: "Poiret one";
+    font-weight: bold;
+    margin-left:130px;    
+    border:solid;
+    border-width: thin;
+    border-color: #FF99B5;
+    border-radius: 12px;
+    padding-top: 15px;
+    padding:30px;
+    background-color: rgb(250, 248, 248);
+    width: 70%;
+
+}
+.form-mapa h1{
+    background-color: #FF0047;
+    padding:10px;
+    font-size: 40px;
+    border-radius:3px;
+    margin-top:0;
+    display:flex;
+    justify-content:center;
+}
+
+.form-mapa h3{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    color: black;   
+    background-color: #FF99B5;
+    padding:10px;
+    border-radius: 3px;
+    width:300px;
+    margin:70px;
+    margin-left: 70px;
+    margin-bottom:10;
+}
+
+.form-mapa input[type=radio]{
+    height: 20px;
+    width:auto;
+}
+.h3input :nth-child(2){
+    margin-left: 150px;
+}
+.form-mapa button{
+    margin-top:40px;
+    margin-left:410px;
+    font-family: "poiret one";
+    font-weight: bold;
+    color:white;
+    font-size:20pt;
+    background-color: #FF0047;
+    width:110px;
+    height:60px;
+    border:none;
+    border-radius:12px;
+}
+.coluna01{
+    display:flex;
 }
