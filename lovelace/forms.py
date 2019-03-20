@@ -1,6 +1,7 @@
 from django import forms
 from lovelace.models import Usuario
 from datetime import date
+from lovelace.models import Formulario
 
 #class DateInput(forms.DateInput):
 #    input_type = 'date'
@@ -25,19 +26,19 @@ class FormGuia(forms.ModelForm):
             'seguranca'
         ]
 
-class Vota(forms.Form):
-    VOTA=[('iluminado', 'Iluminado?'),
-         ('movimentado','Movimentado'),
-         ('vigilancia', 'Vigilancia'),
-         ('segura', 'Voce se sente segura aqui?')]
+# class Vota(forms.Form):
+#     VOTA=[('iluminado', 'Iluminado?'),
+#          ('movimentado','Movimentado'),
+#          ('vigilancia', 'Vigilancia'),
+#          ('segura', 'Voce se sente segura aqui?')]
          #array com valor e label dos radio buttons
 
-    vota = forms.MultipleChoiceField(
-        #criando um objeto do tipo MultipleChoicefield, diferente do RadioSelect. As opções são passadas com parâmetros do próprio objeto, e não do objeto ChecboxSelectMultiple
-        label='Classifique:',
-        widget=forms.CheckboxSelectMultiple,
-        choices=VOTA
-    )
+    # vota = forms.MultipleChoiceField(
+    #     #criando um objeto do tipo MultipleChoicefield, diferente do RadioSelect. As opções são passadas com parâmetros do próprio objeto, e não do objeto ChecboxSelectMultiple
+    #     label='Classifique:',
+    #     widget=forms.CheckboxSelectMultiple,
+    #     # choices=VOTA
+    # )
 
     outros = forms.CharField(
         max_length=256,

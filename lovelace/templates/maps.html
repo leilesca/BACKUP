@@ -11,7 +11,8 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.319855258834!2d-46.66115638538406!3d-23.55695316731379!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59ccf12e5007%3A0x394b02124900517c!2sR.+Augusta%2C+S%C3%A3o+Paulo+-+SP!5e0!3m2!1spt-BR!2sbr!4v1552948953135" width="700" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
         </div>
         <div class="form">
-                <form>
+                <form method="POST">
+                        {% csrf_token %}
                         <h3>Este lugar é iluminado?</h3>
                         <input type="radio" name="iluminado" value="Sim" id="iluminados"> Sim
                         <input type="radio" name="iluminado" value="Nao" id="iluminadon"> Nao
@@ -28,23 +29,6 @@
                         <button type="submit"> Enviar </button>
                     </form>
         </div>
-    </div>
-    <div id=votacao>
-        <ul> </ul>
-        <ul> </ul>
-    </div>
-
-    <div>
-            
-        
-            <div>
-                    {%  for i in items %}
-                        <p>{{i.formulario.iluminado}}</p>
-                        <p>{{i.formulario.movimentado}}</p>
-                        <p>{{i.formulario.vigilancia}}</p>
-                        <p>{{i.formulario.seguranca}}</p><br>
-                    {% endfor %}
-                </div>
-        
-        </div>
+    </div>    
+          
 {% endblock %}

@@ -1,9 +1,9 @@
 #aqui virá toda a lógica da aplicação. Vai extrair as informações da model e entregá-las a um template.
 
 from django.shortcuts import render, redirect
-from lovelace import forms
+from .forms import FormGuia
 # Incluir os modelos/classes (definidos em models.py):
-from .models import Usuario, Parceiras, Estabelecimento, Categoria, FiltroParceiras
+from .models import Usuario, Parceiras, Estabelecimento, Categoria, FiltroParceiras, Formulario
 
 # Create your views here.
 
@@ -32,11 +32,16 @@ def render_home(request):
     return render(request, 'home.html')
 
 def render_maps(request):
-    form = forms.Formulario(request.POST or None)
-    if form.is_valid():
-        form.save()
-
-    return render(request, 'maps.html', {'form': form})
+    if request.method == 'POST':
+        formulario = FormGuia(request.POST)
+        if formulario.is_valid():
+                formulario = Formulario()
+                formulario.iluminado = request.POST['iluminado']
+                formulario.movimentado = request.POST['movimentado']
+                formulario.vigilancia = request.POST['vigilancia']
+                formulario.seguranca = requests.POST['seguranca']
+                formulario.save()
+    return render(request, 'maps.html', {'form': Formulario})
 
 def render_guia(request):
     return render(request, 'guia.html')
